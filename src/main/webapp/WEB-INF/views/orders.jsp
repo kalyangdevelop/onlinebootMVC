@@ -10,8 +10,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <title>OrdersList!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-    <title>Homepage!</title><meta charset="UTF-8">
     <style>
         .topnav {
             position:relative;
@@ -115,14 +118,14 @@
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/home' title='Home'>HOME</a>
-            <a class="act" href="/cells">Items</a>
+            <a class="active" href='/admin' title='admin'>Admin</a>
+            <a class="act" href="/orders">Order List</a>
 
-            <a class="act" href="/addCell">CreateItem</a>
-            <a class="act" href="/deleteCell">Delete Item</a>
-            <a class="act" href="/updateCell">Update Item</a>
+            <%--<a class="act" href="/addOrder">Add Order</a>--%>
+            <a class="act" href="/deleteOrder">Delete Order</a>
+            <a class="act" href="/updateOrder">Update Order</a>
             <div class="log">
-                <a class="active" href='/login' title='login'>Login</a>
+                <a class="active" href='/loginout' title='login'>Login Out</a>
             </div>
             <div class="search-container">
 
@@ -135,58 +138,37 @@
         </div>
     </div>
 </div><br>
-<h1>Cell Phones!</h1>
-<div>    <table class="table">
-    <thead>
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>Phone Name</th>
-        <th>Price</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="cell" items="${cell}">
+<h1>Order List</h1>
+
+
+<div class="container">
+
+    <table class="table table-dark table-striped">
+        <thead>
         <tr>
-            <td>${cell.id}</td>
-            <td>${cell.pname}</td>
-            <td>${cell.price}</td>
+            <th>Order ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Address1</th>
+            <th>Address2</th>
+            <th>Total Bill</th>
+
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="o" items="${o}">
+            <tr>
+                <td>${o.oid}</td>
+                <td>${o.fullname}</td>
+                <td>${o.email}</td>
+                <td>${o.address1}</td>
+                <td>${o.address2}</td>
+                <td>${o.totalbill}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </div>
-
-<form action="/update" method="put" if-match="*">
-    <div>
-        PID:<br>
-        <input type="text" name="id"></div><br>
-    <div>
-        <div>
-            PhoneName:<br>
-            <input type="text" name="pname"></div>
-        <div>
-            <%-- Size:<br>
-             <input type="text" name="size"></div><br>
-         <div>--%>
-            <div>
-                Price:<br>
-                <input type="text" name="price"></div><br>
-            <div>
-                <input type="submit" name="submit" value="update">
-            </div>
-
-</form>
-
-<div class="center" >
-    <a href="/iphone">
-        <div>  <img src="smiley.gif" alt="iPhones"></div><div>iPhones!</div>
-    </a></div>
-<div class="center" >
-    <a class="center"  href="/samsung">
-        <div> <img src="smiley.gif" alt="Computers"></div><div>Sam Sung!</div>
-    </a>
 </div>
 </body>
 </html>

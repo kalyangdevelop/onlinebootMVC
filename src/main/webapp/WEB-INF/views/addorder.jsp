@@ -12,6 +12,9 @@
 <head>
 
     <title>Homepage!</title><meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <style>
         .topnav {
             position:relative;
@@ -92,18 +95,6 @@
             }
 
         }
-        .center {
-            margin: auto;
-            width: 14%;
-            height:30%;
-            padding: 50px;
-
-        }
-        .table{
-            color: #4CAF50;
-            background-color: aquamarine;
-        }
-
 
     </style>
 
@@ -115,14 +106,14 @@
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/home' title='Home'>HOME</a>
-            <a class="act" href="/cells">Items</a>
+            <a class="active" href='/home' title='Home'>Home</a>
+            <a class="act" href="/orders">Order List</a>
 
-            <a class="act" href="/addCell">CreateItem</a>
-            <a class="act" href="/deleteCell">Delete Item</a>
-            <a class="act" href="/updateCell">Update Item</a>
+            <a class="act" href="/addOrder">Add Order</a>
+            <a class="act" href="/deleteOrder">Delete Order</a>
+            <a class="act" href="/updateOrder">Update Order</a>
             <div class="log">
-                <a class="active" href='/login' title='login'>Login</a>
+                <a class="active" href='login' title='login'>Login</a>
             </div>
             <div class="search-container">
 
@@ -135,58 +126,36 @@
         </div>
     </div>
 </div><br>
-<h1>Cell Phones!</h1>
-<div>    <table class="table">
-    <thead>
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>Phone Name</th>
-        <th>Price</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="cell" items="${cell}">
-        <tr>
-            <td>${cell.id}</td>
-            <td>${cell.pname}</td>
-            <td>${cell.price}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</div>
+<h1>Order!</h1>
 
-<form action="/update" method="put" if-match="*">
-    <div>
-        PID:<br>
-        <input type="text" name="id"></div><br>
-    <div>
-        <div>
-            PhoneName:<br>
-            <input type="text" name="pname"></div>
-        <div>
-            <%-- Size:<br>
-             <input type="text" name="size"></div><br>
-         <div>--%>
+<div class="container">
+    <form action="/orderSave" method="post">
+
+        <div class="form-group">
+            <label for="usr"> Full Name:</label>
+                <input type="text" class="form-control" name="fullname" id="usr" ></div>
             <div>
-                Price:<br>
-                <input type="text" name="price"></div><br>
-            <div>
-                <input type="submit" name="submit" value="update">
-            </div>
+                <div class="form-group">
+                    <label for="em"> Email:</label>
+                    <input type="text" class="form-control" name="email" id="em" ></div>
 
-</form>
 
-<div class="center" >
-    <a href="/iphone">
-        <div>  <img src="smiley.gif" alt="iPhones"></div><div>iPhones!</div>
-    </a></div>
-<div class="center" >
-    <a class="center"  href="/samsung">
-        <div> <img src="smiley.gif" alt="Computers"></div><div>Sam Sung!</div>
-    </a>
+                    <div class="form-group">
+                        <label for="ad1"> Address1:</label>
+                        <input type="text" class="form-control" name="address1" id="ad1" ></div>
+
+                        <div class="form-group">
+                            <label for="ad2"> Address2:</label>
+                            <input type="text" class="form-control" name="address2" id="ad2" ></div>
+                <div class="form-group">
+                    <label for="tb"> Total Bill:</label>
+                    <input type="text" class="form-control" name="totalbill" id="tb" ></div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+
+                    <%--<input type="submit" name="submit" value="save">--%>
+                </div>
+    </form>
 </div>
 </body>
 </html>

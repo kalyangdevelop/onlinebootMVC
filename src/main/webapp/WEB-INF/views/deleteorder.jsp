@@ -11,40 +11,52 @@
 <html>
 <head>
 
-    <title>Homepage!</title><meta charset="UTF-8">
+    <title>Homepage!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <style>
         .topnav {
-            position:relative;
-            z-index:2;
-            font-size:17px;
-            background-color:#5f5f5f;
-            color:#ffffff;
-            width:100%;
-            padding:0;
-            letter-spacing:1px;
-            font-family:"Segoe UI",Arial,sans-serif;
+            position: relative;
+            z-index: 2;
+            font-size: 17px;
+            background-color: #5f5f5f;
+            color: #ffffff;
+            width: 100%;
+            padding: 0;
+            letter-spacing: 1px;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
-        .topnav a{
-            padding:10px 15px 9px 15px !important;
+
+        .topnav a {
+            padding: 10px 15px 9px 15px !important;
         }
-        .topnav .bar a:hover,.topnav .bar a:focus{
-            background-color:#000000 !important;
-            color:#ffffff !important;
+
+        .topnav .bar a:hover, .topnav .bar a:focus {
+            background-color: #000000 !important;
+            color: #ffffff !important;
         }
+
         .topnav .bar a.active {
-            background-color:#4CAF50;
-            color:#ffffff;
+            background-color: #4CAF50;
+            color: #ffffff;
         }
+
         .topnav .bar a.act {
-            color:#ffffff;
+            color: #ffffff;
         }
-        .topnav .bar-item button{color:#ffffff;}
+
+        .topnav .bar-item button {
+            color: #ffffff;
+        }
+
         a.topnav-icons {
-            width:52px !important;
-            font-size:20px !important;
-            padding-top:11px !important;
-            padding-bottom:13px !important;
+            width: 52px !important;
+            font-size: 20px !important;
+            padding-top: 11px !important;
+            padding-bottom: 13px !important;
         }
+
         .topnav .log {
             float: right;
         }
@@ -79,6 +91,7 @@
             .topnav .search-container {
                 float: none;
             }
+
             .topnav a, .topnav input[type=text], .topnav .search-container button {
                 float: none;
                 display: block;
@@ -87,65 +100,57 @@
                 margin: 0;
                 padding: 14px;
             }
+
             .topnav input[type=text] {
                 border: 1px solid #ccc;
             }
 
         }
+
         .center {
             margin: auto;
             width: 14%;
-            height:30%;
+            height: 30%;
             padding: 50px;
 
         }
-        .table{
+
+        .table {
             color: #4CAF50;
             background-color: aquamarine;
         }
-
-
     </style>
-
 </head>
-
 <body>
-
-
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/home' title='Home'>HOME</a>
-            <a class="act" href="/cells">Items</a>
-
-            <a class="act" href="/addCell">CreateItem</a>
-            <a class="act" href="/deleteCell">Delete Item</a>
-            <a class="act" href="/updateCell">Update Item</a>
+            <a class="active" href='/admin' title='Admin'>Admin</a>
+            <a class="act" href="/orders">Order List</a>
+          <%--  <a class="act" href="/addOrder">Add Order</a>--%>
+            <a class="act" href="/deleteOrder">Delete Order</a>
+            <a class="act" href="/updateOrder">Update Order</a>
             <div class="log">
-                <a class="active" href='/login' title='login'>Login</a>
+                <a class="active" href='/loginout' title='login'>Login Out</a>
             </div>
             <div class="search-container">
-
-
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit">Submit</button>
-
-
             </div>
         </div>
     </div>
-</div><br>
-<h1>Delete Item!</h1>
-
-<form action="/del/{pid}" method="delete">
-    <div>
-
-        PID:<br>
-        <input type="text" name="id"></div><br>
-    <div>
-        <input type="submit" name="submit" value="del">
-    </div>
-</form>
+</div>
+<br>
+<h1>Delete Order!</h1>
+<div class="container">
+    <form action="/delor" method="post">
+        <div class="form-group">
+            <label for="tb"> OID:</label>
+            <input type="text" class="form-control" name="oid" id="tb"></div>
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+</div>
+</div>
 </div>
 </body>
 </html>

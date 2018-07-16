@@ -64,11 +64,11 @@ restTemplate.postForEntity("http://localhost:8092/cell",cell, Cell.class);
         System.out.println("after hello");
         return "hello";
     }
-    @RequestMapping(value = "/del/{pid}", method = RequestMethod.DELETE)
-    public String deleteCell(@ModelAttribute int pid) {
+    @RequestMapping(value = "/del", method = RequestMethod.DELETE)
+    public String deleteCell(@ModelAttribute Cell cell) {
         System.out.println("before del");
 
-        restTemplate.delete("http://localhost:8092/cell",pid);
+        restTemplate.delete("http://localhost:8092/cell",cell, Cell.class);
         System.out.println("after del");
         return "hello";
     }
