@@ -19,7 +19,6 @@ public class CellController {
 
     @Autowired
     RestTemplate restTemplate;
-
     @RequestMapping(value = "/cells", method = RequestMethod.GET)
     public ModelAndView getCell(HttpServletRequest request) {
         ModelAndView view = new ModelAndView();
@@ -29,7 +28,7 @@ public class CellController {
         Cell[] cell = (responseEntity.getBody());
         System.out.println("lenght of the table rows " + cell.length); //lenght of the table rows
         request.setAttribute("cell", Arrays.asList(cell)); // create list
-        /*if(responseEntity.getStatusCode() == HttpStatus.OK){
+       /* if(responseEntity.getStatusCode() == HttpStatus.OK){
             ModelAndView view = new ModelAndView();
             view.setViewName("hello");
             view.addObject(responseEntity.getBody());

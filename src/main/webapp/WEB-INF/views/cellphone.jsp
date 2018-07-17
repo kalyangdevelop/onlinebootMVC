@@ -11,7 +11,7 @@
 <html>
 <head>
 
-    <title>Homepage!</title><meta charset="UTF-8">
+    <title>Cell Phones!</title><meta charset="UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -48,11 +48,11 @@
             padding-top:11px !important;
             padding-bottom:13px !important;
         }
-        .topnav .log {
-            float: right;
-        }
 
         .topnav .search-container {
+            float: right;
+        }
+        .topnav .log {
             float: right;
         }
 
@@ -95,6 +95,14 @@
             }
 
         }
+        .center {
+            margin: auto;
+            width: 14%;
+            height:30%;
+            padding: 50px;
+
+        }
+
 
     </style>
 
@@ -106,12 +114,13 @@
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/home' title='Home'>Home</a>
-            <a class="act" href="/addOrder">Add Order</a>
-            <a class="act" href="/udeleteOrder">Delete Order</a>
-            <a class="act" href="/uupdateOrder">Update Order</a>
+            <a class="active" href='/home' title='Home'>HOME</a>
+
+            <a class="act" href="/electronics">Electronics</a>
+            <a class="act" href="/cellphones">Cell Phones</a>
+            <%--  <a class="act" href="/clothes">Clothes</a>--%>
             <div class="log">
-                <a class="active" href='login' title='login'>Login</a>
+                <a class="active" href='/login' title='login'>Login</a>
             </div>
             <div class="search-container">
 
@@ -123,38 +132,24 @@
             </div>
         </div>
     </div>
-</div><br>
-<h1>Order!</h1>
+</div></br>
+<div class="container-fluid">
+<h1>Cellphones!</h1>
+    <div class="container-fluid">
+<div class="row">
+    <div class="col">   <c:forEach var="cell" items="${cell}">
+        <a href="/addOrder"> <div>  <img src="smiley.gif" alt="Cell Phones"> </div>><div>${cell.pname}</div></a></div>
+          <div>  ${cell.id} </div>
+  <div> <b color="red">Price:</b>${cell.price}</div>
 
-<div class="container">
-    <form action="/orderSave" method="post">
+</c:forEach>
+    </div>
 
-        <div class="form-group">
-            <label for="usr"> Full Name:</label>
-                <input type="text" class="form-control" name="fullname" id="usr" ></div>
-            <div>
-                <div class="form-group">
-                    <label for="em"> Email:</label>
-                    <input type="text" class="form-control" name="email" id="em" ></div>
-
-
-                    <div class="form-group">
-                        <label for="ad1"> Address1:</label>
-                        <input type="text" class="form-control" name="address1" id="ad1" ></div>
-
-                        <div class="form-group">
-                            <label for="ad2"> Address2:</label>
-                            <input type="text" class="form-control" name="address2" id="ad2" ></div>
-                <div class="form-group">
-                    <label for="tb"> Total Bill:</label>
-                    <input type="text" class="form-control" name="totalbill" id="tb" ></div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-
-                    <%--<input type="submit" name="submit" value="save">--%>
-                </div>
-    </form>
 </div>
+</div>
+</div>
+
+
 </body>
 </html>
 

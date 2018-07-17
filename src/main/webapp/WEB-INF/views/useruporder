@@ -95,6 +95,18 @@
             }
 
         }
+        .center {
+            margin: auto;
+            width: 14%;
+            height:30%;
+            padding: 50px;
+
+        }
+        .table{
+            color: #4CAF50;
+            background-color: aquamarine;
+        }
+
 
     </style>
 
@@ -127,32 +139,32 @@
 <h1>Order!</h1>
 
 <div class="container">
-    <form action="/orderSave" method="post">
+    <form action="/uuporder" method="post">
 
         <div class="form-group">
             <label for="usr"> Full Name:</label>
-                <input type="text" class="form-control" name="fullname" id="usr" ></div>
-            <div>
-                <div class="form-group">
-                    <label for="em"> Email:</label>
-                    <input type="text" class="form-control" name="email" id="em" ></div>
+            <input type="text" class="form-control" name="fullname" id="usr" ></div>
+        <div>
+            <div class="form-group">
+                <label for="em"> Email:</label>
+                <input type="text" class="form-control" name="email" id="em" ></div>
 
 
-                    <div class="form-group">
-                        <label for="ad1"> Address1:</label>
-                        <input type="text" class="form-control" name="address1" id="ad1" ></div>
+            <div class="form-group">
+                <label for="ad1"> Address1:</label>
+                <input type="text" class="form-control" name="address1" id="ad1" ></div>
 
-                        <div class="form-group">
-                            <label for="ad2"> Address2:</label>
-                            <input type="text" class="form-control" name="address2" id="ad2" ></div>
-                <div class="form-group">
-                    <label for="tb"> Total Bill:</label>
-                    <input type="text" class="form-control" name="totalbill" id="tb" ></div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <label for="ad2"> Address2:</label>
+                <input type="text" class="form-control" name="address2" id="ad2" ></div>
+            <div class="form-group">
+                <label for="tb"> Total Bill:</label>
+                <input type="text" class="form-control" name="totalbill" id="tb" ></div>
+            <button type="submit" class="btn btn-primary">Submit</button>
 
 
-                    <%--<input type="submit" name="submit" value="save">--%>
-                </div>
+            <%--<input type="submit" name="submit" value="save">--%>
+        </div>
     </form>
 </div>
 </body>

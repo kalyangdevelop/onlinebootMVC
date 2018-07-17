@@ -6,15 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 
     <title>Homepage!</title><meta charset="UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <style>
         .topnav {
             position:relative;
@@ -48,11 +43,11 @@
             padding-top:11px !important;
             padding-bottom:13px !important;
         }
-        .topnav .log {
-            float: right;
-        }
 
         .topnav .search-container {
+            float: right;
+        }
+        .topnav .log {
             float: right;
         }
 
@@ -95,6 +90,14 @@
             }
 
         }
+        .center {
+            margin: auto;
+            width: 14%;
+            height:30%;
+            padding: 50px;
+
+        }
+
 
     </style>
 
@@ -106,12 +109,12 @@
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/home' title='Home'>Home</a>
-            <a class="act" href="/addOrder">Add Order</a>
-            <a class="act" href="/udeleteOrder">Delete Order</a>
-            <a class="act" href="/uupdateOrder">Update Order</a>
+            <a class="active" href='/home' title='Home'>HOME</a>
+
+            <a class="act" href="/electronics">Electronics</a>
+          <%--  <a class="act" href="/clothes">Clothes</a>--%>
             <div class="log">
-                <a class="active" href='login' title='login'>Login</a>
+                <a class="active" href='/login' title='login'>Login</a>
             </div>
             <div class="search-container">
 
@@ -123,37 +126,15 @@
             </div>
         </div>
     </div>
-</div><br>
-<h1>Order!</h1>
-
-<div class="container">
-    <form action="/orderSave" method="post">
-
-        <div class="form-group">
-            <label for="usr"> Full Name:</label>
-                <input type="text" class="form-control" name="fullname" id="usr" ></div>
-            <div>
-                <div class="form-group">
-                    <label for="em"> Email:</label>
-                    <input type="text" class="form-control" name="email" id="em" ></div>
-
-
-                    <div class="form-group">
-                        <label for="ad1"> Address1:</label>
-                        <input type="text" class="form-control" name="address1" id="ad1" ></div>
-
-                        <div class="form-group">
-                            <label for="ad2"> Address2:</label>
-                            <input type="text" class="form-control" name="address2" id="ad2" ></div>
-                <div class="form-group">
-                    <label for="tb"> Total Bill:</label>
-                    <input type="text" class="form-control" name="totalbill" id="tb" ></div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-
-                    <%--<input type="submit" name="submit" value="save">--%>
-                </div>
-    </form>
+</div></br>
+<h1>Electronics!</h1>
+<div class="center" >
+    <a href="/cellphones">
+        <div>  <img src="smiley.gif" alt="Cell Phones"></div><div>Cell Phones!</div>
+    </a></div>
+<div class="center" >
+    <a class="center"  href="/computers">
+        <div> <img src="smiley.gif" alt="Computers"></div><div>Computers!</div></a>
 </div>
 </body>
 </html>

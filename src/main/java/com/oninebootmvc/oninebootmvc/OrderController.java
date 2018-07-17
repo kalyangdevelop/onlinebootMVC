@@ -30,23 +30,23 @@ public class OrderController {
         return view;
 
     }
-    @RequestMapping(value = "/orderSave", method = RequestMethod.POST)
+   /* @RequestMapping(value = "/orderSave", method = RequestMethod.POST)
     public String createOrder(@ModelAttribute Order o) {
         System.out.println("before order");
         restTemplate.postForEntity("http://localhost:8092/orders",o, Order.class);
         System.out.println("after order");
         return "adminhome";
-    }
+    }*/
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminhome() {
         System.out.println("before adminhome");
         return "adminhome";
     }
-    @RequestMapping(value = "/addOrder", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/addOrder", method = RequestMethod.GET)
     public String openAdd() {
         System.out.println("before openAdd");
         return "addorder";
-    }
+    }*/
     @RequestMapping(value = "/deleteOrder", method = RequestMethod.GET)
     public String openDelete() {
         System.out.println("before openDelete");
