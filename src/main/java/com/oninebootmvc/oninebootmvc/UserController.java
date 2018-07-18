@@ -22,7 +22,7 @@ public class UserController {
         ModelAndView view = new ModelAndView();
         view.setViewName("cellphone");
         ResponseEntity<Cell[]> responseEntity = restTemplate.getForEntity("http://localhost:8092/cell", Cell[].class);
-        System.out.println("before response cell method");
+        System.out.println("before response cellphone method");
         Cell[] cell = (responseEntity.getBody());
         System.out.println("lenght of the table rows " + cell.length); //lenght of the table rows
         request.setAttribute("cell", Arrays.asList(cell)); // create list
@@ -34,7 +34,7 @@ public class UserController {
         }*/
 //shows data in jsp
 
-        System.out.println("after cell");
+        System.out.println("after cellphone");
         return view;
 
     }
@@ -56,6 +56,18 @@ public class UserController {
         System.out.println("inside home method");
         return "homepage";
     }
+    @RequestMapping(value = "/userdelorder", method=RequestMethod.GET)
+    public String UserDeleteOrder(){
+        System.out.println("inside home method");
+        return "userdelorder";
+    }
+
+    @RequestMapping(value = "/useruporder", method=RequestMethod.GET)
+    public String UserUpdateOrder(){
+        System.out.println("inside home method");
+        return "useruporder";
+    }
+
     @RequestMapping(value = "/electronics", method=RequestMethod.GET)
     public String electronics(){
         System.out.println("inside electronics method");

@@ -11,6 +11,11 @@
 <head>
 
     <title>Homepage!</title><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
    <style>
        .topnav {
            position:relative;
@@ -91,13 +96,15 @@
 
        }
        .center {
-           margin: auto;
-           width: 14%;
-           height:30%;
+           margin: 2px;
+           width: 18%;
+           height:18%;
            padding: 50px;
 
+           color:#ffffff;
+           font-family:"Segoe UI",Arial,sans-serif;
+           font-size:16px;
        }
-
 
    </style>
 </head>
@@ -105,14 +112,40 @@
 <body>
 
 
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href='/home' title='Home'>HOME</a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link" href='/loginpage' title='login'>Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/cellphones">Products</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Orders
+            </a>
+            <div class="dropdown-menu">
+
+                <a class="dropdown-item" href="/userdelorder">Cancel Order</a>
+                <a class="dropdown-item" href="/useruporder">Update Order</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<br><%--
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
             <a class="active" href='/home' title='Home'>HOME</a>
-                <a class="act" href="/electronics">Electronics</a>
-              <%--  <a class="act" href="/clothes">Clothes</a>--%>
+                <a class="act" href="/electronics">Products</a>
+              &lt;%&ndash;  <a class="act" href="/clothes">Clothes</a>&ndash;%&gt;
             <div class="log">
-                <a class="active" href='/login' title='login'>Login</a>
+                <a class="active" href='/loginpage' title='login'>Login</a>
             </div>
                 <div class="search-container">
 
@@ -124,17 +157,7 @@
             </div>
         </div>
     </div>
-</div><br>
-<div class="center" >
-<a href="/electronics">
-  <div>  <img src="smiley.gif" alt="Elecronics"></div><div>Elecronics!</div>
-</a></div>
-<%--
-<div class="center" >
-<a class="center"  href="/clothes">
-    <div> <img src="smiley.gif" alt="Clothes"></div><div>Clothes!</div>
-</a></div>
---%>
+</div>--%><br>
 
 
 </body>

@@ -3,13 +3,12 @@ package com.oninebootmvc.oninebootmvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 
 @Controller
@@ -52,12 +51,13 @@ public class OrderController {
         System.out.println("before openDelete");
         return "deleteorder";
     }
-    @RequestMapping(value = "/delor", method = RequestMethod.DELETE)
-    public String deleteOrder(@ModelAttribute Order o ){
+    @RequestMapping(value = "/delor", method = RequestMethod.GET)
+    public String deleteOrder(HttpServletRequest request){
         System.out.println("before delor");
-        restTemplate.delete("http://localhost:8092/cell",o, Order.class);
-        System.out.println("after delor");
-        return "adminhome";
+
+       restTemplate.getForEntity("http://localhost:8092//ordersid?=", Order.class);
+        System.out.println("before response order method");
+        return "orders";
     }
     @RequestMapping(value = "/updateOrder", method = RequestMethod.GET)
     public String openUpdate() {

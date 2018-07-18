@@ -56,12 +56,12 @@ public class CellController {
         return "update";
     }
 
-    @RequestMapping(value = "/hello", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String createCell(@ModelAttribute Cell cell) {
         System.out.println("before hello");
 restTemplate.postForEntity("http://localhost:8092/cell",cell, Cell.class);
         System.out.println("after hello");
-        return "hello";
+        return "cells";
     }
     @RequestMapping(value = "/del", method = RequestMethod.DELETE)
     public String deleteCell(@ModelAttribute Cell cell) {

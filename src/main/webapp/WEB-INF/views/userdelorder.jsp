@@ -11,73 +11,74 @@
 <html>
 <head>
 
-    <title>Delete Product!</title><meta charset="utf-8">
+    <title>User Delete!</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-</head>
 
+</head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href='/admin' title='admin'>Admin</a>
+    <a class="navbar-brand" href='/home' title='Home'>Home</a>
 
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href='/logout' title='login'>Login Out</a>
+            <a class="nav-link" href='/loginpage' title='login'>Login</a>
+            </div>
         </li>
+
+        <!-- Dropdown -->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Items    </a>
+                Orders
+            </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/cells">Items</a>
-                <a class="dropdown-item" href="/addCell">CreateItem</a>
-                <a class="dropdown-item" href="/deleteCell">Delete Item</a>
-                <a class="dropdown-item" href="/updateCell">Update Item</a>
+
+                <a class="dropdown-item" href="/userdelorder">Cancel Order</a>
+                <a class="dropdown-item" href="/useruporder">Update Order</a>
             </div>
         </li>
     </ul>
 </nav>
+<br>
 
 <%--
+
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/admin' title='admin'>Admin</a>
-            <a class="act" href="/cells">Items</a>
-            <a class="act" href="/addCell">CreateItem</a>
-            <a class="act" href="/deleteCell">Delete Item</a>
-            <a class="act" href="/updateCell">Update Item</a>
+            <a class="active" href='/home' title='Home'>Home</a>
+            <a class="act" href="/addOrder">Add Order</a>
+            <a class="act" href="/udeleteOrder">Delete Order</a>
+            <a class="act" href="/uupdateOrder">Update Order</a>
             <div class="log">
-                <a class="active" href='/logout' title='login'>Logout</a>
+                <a class="active" href='/loginpage' title='login'>Login</a>
             </div>
             <div class="search-container">
-
-
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit">Submit</button>
-
-
             </div>
         </div>
     </div>
-</div>--%><br>
+</div>
+--%>
+<br>
+<h1>User Delete Order!</h1>
 <div class="container">
-<h1>Delete Product</h1>
-
-<form action="/del" method="delete" class="container">
-    <div class="form-group">
-
-        Product ID:<br>
-        <input type="text" name="id"></div><br>
-    <div>
-        <button type="submit" class="btn btn-primary"><a href="/=${cell.oid}">Delete</a></button>
-    </div>
-</form>
+    <form action="/udelor" method="post">
+        <div class="form-group">
+            <label for="tb"> Order ID:</label>
+            <input type="text" class="form-control" name="oid" id="tb"></div>
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+</div>
+</div>
 </div>
 </body>
 </html>

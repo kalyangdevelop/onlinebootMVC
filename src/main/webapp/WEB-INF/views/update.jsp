@@ -11,7 +11,12 @@
 <html>
 <head>
 
-    <title>Homepage!</title><meta charset="UTF-8">
+    <title>Update Product!</title><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <style>
         .topnav {
             position:relative;
@@ -111,18 +116,39 @@
 
 <body>
 
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href='/admin' title='admin'>Admin</a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href='/logout' title='login'>Login Out</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Items    </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/cells">Items</a>
+                <a class="dropdown-item" href="/addCell">CreateItem</a>
+                <a class="dropdown-item" href="/deleteCell">Delete Item</a>
+                <a class="dropdown-item" href="/updateCell">Update Item</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<%--
 
 <div class='card-2 topnav' id='topnav'>
     <div style="overflow:auto;">
         <div class="bar left" style="width:100%;overflow:hidden;height:44px">
-            <a class="active" href='/home' title='Home'>HOME</a>
+            <a class="active" href='/admin' title='admin'>Admin</a>
             <a class="act" href="/cells">Items</a>
-
             <a class="act" href="/addCell">CreateItem</a>
             <a class="act" href="/deleteCell">Delete Item</a>
             <a class="act" href="/updateCell">Update Item</a>
             <div class="log">
-                <a class="active" href='/login' title='login'>Login</a>
+                <a class="active" href='/logout' title='login'>Logout</a>
             </div>
             <div class="search-container">
 
@@ -135,14 +161,15 @@
         </div>
     </div>
 </div><br>
-<h1>Cell Phones!</h1>
+--%>
+<h1>Update Product!</h1>
 <div>    <table class="table">
     <thead>
     <tr>
         <th>
-            ID
+            Product ID
         </th>
-        <th>Phone Name</th>
+        <th>Product Name</th>
         <th>Price</th>
     </tr>
     </thead>
@@ -158,13 +185,13 @@
 </table>
 </div>
 
-<form action="/update" method="put" if-match="*">
+<form action="/update" method="put" if-match="*" class="container">
     <div>
-        PID:<br>
+        Product ID:<br>
         <input type="text" name="id"></div><br>
     <div>
         <div>
-            PhoneName:<br>
+            Product Name:<br>
             <input type="text" name="pname"></div>
         <div>
             <%-- Size:<br>
@@ -179,14 +206,6 @@
 
 </form>
 
-<div class="center" >
-    <a href="/iphone">
-        <div>  <img src="smiley.gif" alt="iPhones"></div><div>iPhones!</div>
-    </a></div>
-<div class="center" >
-    <a class="center"  href="/samsung">
-        <div> <img src="smiley.gif" alt="Computers"></div><div>Sam Sung!</div>
-    </a>
 </div>
 </body>
 </html>
